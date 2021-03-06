@@ -5,6 +5,7 @@ Note: This program is released under GNU General Public License version 3, all f
 ## Prerequisites
 	Python 3.x (https://python.org/)
 	Turtle (built-in within Python)
+	random (built-in within Python)
 
 ## Running
 	`python ./main.py` (Windows) or `python3 ./main.py` (Mac OS / Unix-based OSes), it depends on your system.
