@@ -30,8 +30,8 @@ Note: This program is released under GNU General Public License version 3, all f
 		+ Step 5.1: Initialize player 1's and player 2's score (0  -  0)
 		+ Step 5.2: Create a turtle Object and write the variables to it, using .format() function.
 		+ Step 5.3: Display the scoreboard on top of the screen
-        - Step 6: Make the ball move:
-                + Create 2 variables: `Dx` and `Dy`, the ball will move because its xcor() and ycor() is repeatedly added with Dx and Dy.
+    - Step 6: Make the ball move:
+            + Create 2 variables: `Dx` and `Dy`, the ball will move because its xcor() and ycor() is repeatedly added with Dx and Dy.
 	- Step 7: Borders collisions:
 		+ Upper and lower borders will bounce the ball off
 			_ If ball's ycor() is larger than 300, sety() to 300 and change bearing by a specific degree
