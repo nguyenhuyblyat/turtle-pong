@@ -30,15 +30,17 @@ Note: This program is released under GNU General Public License version 3, all f
 		+ Step 5.1: Initialize player 1's and player 2's score (0  -  0)
 		+ Step 5.2: Create a turtle Object and write the variables to it, using .format() function.
 		+ Step 5.3: Display the scoreboard on top of the screen
-	- Step 6: Borders collisions:
+        - Step 6: Make the ball move:
+                + Create 2 variables: `Dx` and `Dy`, the ball will move because its xcor() and ycor() is repeatedly added with Dx and Dy.
+	- Step 7: Borders collisions:
 		+ Upper and lower borders will bounce the ball off
 			_ If ball's ycor() is larger than 300, sety() to 300 and change bearing by a specific degree
 			_ If ball's ycor() is smaller than -300, sety() to -300 and change bearing by a specific degree
 		+ Left and right borders upon hit will increase the player's score
 			_ If ball's xcor() is larger than 400, setx() to 400 and change bearing by a specific degree, increase player 1's score by 1 (one).
 			_ If ball's xcor() is smaller than -400, setx() to -400 and change bearing by a specific degree, increase player 2's score by 1 (one).
-	- Step 7: Paddles collisions:
+	- Step 8: Paddles collisions:
 		+ If ball's xcor() and ycor() is in range of paddle's surface, change bearing by a specific degree.
-	- Step 8: Anti-voiding the paddles:
+	- Step 9: Anti-voiding the paddles:
 		+ If paddles' ycor() is more than 260, sety() back to 260.
 		+ If paddles' ycor() is less than -260, sety() back to -260.
