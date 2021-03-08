@@ -2,25 +2,41 @@
 
 import turtle
 from random import *
+from time import *
 # importing libraries ^^^^^^
 
 paddleDistancePerClick = 80
-ballSpeed = 2
+ballSpeed = 1.5
 # important variables xDDDDD ^^^^^^^^^^
+
+def drawDottedLine(tur, sizeOfSide, spaceBetweenDots, numberOfDots):
+    for i in range(numberOfDots):
+        tur.pd()
+        tur.begin_fill()
+        for x in range(4):
+            tur.forward(sizeOfSide)
+            tur.left(90)
+        tur.end_fill()
+        tur.pu()
+        tur.forward(spaceBetweenDots)
+# function to draw dotted line ^^^^^^^
 
 window = turtle.Screen()
 window.title("@nguyenhuyblyat | Pong!")
 window.bgcolor("black")
 window.setup(width=800, height=600)
 window.tracer(0)
-# window ^^^^^^^^^^^
+# 800x600 window ^^^^^^^^^^^
 
 net = turtle.Turtle()
 net.speed(0)
-net.shape("square")
-net.shapesize(stretch_wid=100, stretch_len=0.5)
-net.color("White")
+net.color("white")
 net.pu()
+net.hideturtle()
+net.goto(0, 295)
+net.right(90)
+drawDottedLine(net, 20, 35, 20)
+# ^^^^^^^^^ this is the function to draw the net, it's positional arguments are: the turtle to draw with (net), the size of each side (20), the distance between each dot (35), the number of dots (20)
 # net ^^^^^^^^^^^^^^
 
 paddleA = turtle.Turtle()
@@ -59,7 +75,7 @@ scoreboard.pu()
 scoreboard.hideturtle()
 scoreboard.goto(0, 255)
 scoreboard.write("0                     0", align="center", font=("Courier", 24, "normal"))
-# score system ^^^^^^^^^^
+# scoreboard ^^^^^^^^^^
 
 def padAup():
 	y = paddleA.ycor()
@@ -97,16 +113,38 @@ window.onkeypress(quitPong, "y")
 while True:
 
     window.update()
-    print(ball.xcor())
+    if playerA == 5:
+        ballDx = 0
+        ballDy = 0
+        ball.setx(0)
+        ball.sety(0)
+        scoreboard.clear()
+        scoreboard.write("Winner!                   {}".format(playerB), align="center", font=("Courier", 24, "normal"))
+        sleep(2.5)
+        window.bye()
+    elif playerB == 5:
+        ballDx = 0
+        ballDy = 0
+        ball.setx(0)
+        ball.sety(0)
+        scoreboard.clear()
+        scoreboard.write("{}                   Winner!".format(playerA), align="center", font=("Courier", 24, "normal"))
+        sleep(2.5)
+        window.bye()
+    # Checks if either player has won, announce the winner, wait for 2.5 seconds and halt the program
+
+    print("Ball X: " + str(ball.xcor()) + " Ball Y: " + str(ball.ycor()) + " Dx: " + str(ballDx) + " Dy: " + str(ballDy)) 
+    # uncomment this for debugging ^^^^^^^^^
+
     ball.sety(ball.ycor() + ballDy)
     ball.setx(ball.xcor() + ballDx)
     # moving ball ^^^^^^^^^^
 
     if ball.ycor() > 300:
-    	ball.sety(280)
+    	ball.sety(300)
     	ballDy *= -1
     if ball.ycor() < -300:
-    	ball.sety(-280)
+    	ball.sety(-300)
     	ballDy *= -1
     if ball.xcor() > 400:
     	ball.setx(400)
@@ -115,7 +153,7 @@ while True:
     	scoreboard.clear()
     	scoreboard.write("{}                     {}".format(playerA, playerB), align="center", font=("Courier", 24, "normal"))
     	ball.setx(0)
-    	ball.sety(randint(-100, 100))
+    	ball.sety(0)
     if ball.xcor() < -400:
     	ball.setx(-400)
     	ballDx *= -1
@@ -123,7 +161,7 @@ while True:
     	scoreboard.clear()
     	scoreboard.write("{}                     {}".format(playerA, playerB), align="center", font=("Courier", 24, "normal"))
     	ball.setx(0)
-    	ball.sety(randint(-100, 100))
+    	ball.sety(0)
     # anti-voiding ball, border collisions and score increments ^^^^^^^^^^
 
     if paddleA.ycor() > 260:

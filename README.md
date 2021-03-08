@@ -6,6 +6,7 @@ Note: This program is released under GNU General Public License version 3, all f
 	- Python 3.x (https://python.org/)
 	- Turtle (built-in within Python)
 	- random (built-in within Python)
+	- time (built-in within Python)
 
 ## Running
 	- `python3 main.py`
@@ -18,7 +19,18 @@ Note: This program is released under GNU General Public License version 3, all f
 
 ## Magic Hax
 	- Step 1: Create an 800x600 window with Turtle, with a black background.
-	- Step 2: Create the net between two players.
+	- Step 2: Define a function to draw a dotted line:
+		+ In the function `drawDottedLine` in my code, it requires 4 arguments:
+			_ The turtle to draw the dotted line
+			_ The size of each dot's side. (This is a square dot)
+			_ The space between each dot
+			_ The number of dots to draw
+		+ Step 2.1: Turtle's pendown (to begin drawing) and starts filling each closed shape with the turtle's color
+		+ Step 2.2: Make the turtle goes forward (which is downward) and turns left or right 90 degrees for 4 times.
+		+ Step 2.3: After it finished drawing the square, stop filling and turtle's penup so it won't draw anymore
+		+ Step 2.4: Make the turtle goes forward the same distance as the space between each dot
+		+ Step 2.5 Repeat the process from 2.1 to 2.4 as many times as you want, ideally enough to fit the whole screen.
+	- Step 3: Create a net turtle and call the function `drawDottedLine` with the criterion that I've just mentioned earlier.
 	- Step 3: Create the paddles and the ball to hit with.
 		+ Move the paddles to near the left and right border of the screen
 		+ The ball stays at [0, 0]
@@ -31,7 +43,9 @@ Note: This program is released under GNU General Public License version 3, all f
 		+ Step 5.2: Create a turtle Object and write the variables to it, using .format() function.
 		+ Step 5.3: Display the scoreboard on top of the screen
     - Step 6: Make the ball move:
-            + Create 2 variables: `Dx` and `Dy`, the ball will move because its xcor() and ycor() is repeatedly added with Dx and Dy.
+            + Step 6.1: Create 2 variables Dx, Dy.
+            + Step 6.2: Add Dx with ball's xcor(), Dy with ball's ycor().
+            Explanation: Imagine the whole window is a graph, and the ball is at [0, 0]. Every time the loop runs, it will add a specific value to ball's x and y. Let's assume the Dx = 1 and Dy = 1. Every time the loop runs, the coordinates of the ball is constantly rising from [0, 0] to [1, 1] and [2, 2] and so on... The ball is corresponding with the gradient: y = x
 	- Step 7: Borders collisions:
 		+ Upper and lower borders will bounce the ball off
 			_ If ball's ycor() is larger than 300, sety() to 300 and change bearing by a specific degree
