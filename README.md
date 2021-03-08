@@ -31,30 +31,30 @@ Note: This program is released under GNU General Public License version 3, all f
 		+ Step 2.4: Make the turtle goes forward the same distance as the space between each dot
 		+ Step 2.5 Repeat the process from 2.1 to 2.4 as many times as you want, ideally enough to fit the whole screen.
 	- Step 3: Create a net turtle and call the function `drawDottedLine` with the criterion that I've just mentioned earlier.
-	- Step 3: Create the paddles and the ball to hit with.
+	- Step 4: Create the paddles and the ball to hit with.
 		+ Move the paddles to near the left and right border of the screen
 		+ The ball stays at [0, 0]
-	- Step 4: Define functions to move the paddles, and to quit the game
+	- Step 5: Define functions to move the paddles, and to quit the game
 		+ Paddle 1 up, down
 		+ Paddle 2 up, down
 		+ Quiting the game
-	- Step 5: Create a scoring system:
+	- Step 6: Create a scoring system:
 		+ Step 5.1: Initialize player 1's and player 2's score (0  -  0)
 		+ Step 5.2: Create a turtle Object and write the variables to it, using .format() function.
 		+ Step 5.3: Display the scoreboard on top of the screen
-    - Step 6: Make the ball move:
+    - Step 7: Make the ball move:
             + Step 6.1: Create 2 variables Dx, Dy.
             + Step 6.2: Add Dx with ball's xcor(), Dy with ball's ycor().
             Explanation: Imagine the whole window is a graph, and the ball is at [0, 0]. Every time the loop runs, it will add a specific value to ball's x and y. Let's assume the Dx = 1 and Dy = 1. Every time the loop runs, the coordinates of the ball is constantly rising from [0, 0] to [1, 1] and [2, 2] and so on... The ball is corresponding with the gradient: y = x
-	- Step 7: Borders collisions:
+	- Step 8: Borders collisions:
 		+ Upper and lower borders will bounce the ball off
 			_ If ball's ycor() is larger than 300, sety() to 300 and change bearing by a specific degree
 			_ If ball's ycor() is smaller than -300, sety() to -300 and change bearing by a specific degree
 		+ Left and right borders upon hit will increase the player's score
 			_ If ball's xcor() is larger than 400, setx() to 400 and change bearing by a specific degree, increase player 1's score by 1 (one).
 			_ If ball's xcor() is smaller than -400, setx() to -400 and change bearing by a specific degree, increase player 2's score by 1 (one).
-	- Step 8: Paddles collisions:
+	- Step 9: Paddles collisions:
 		+ If ball's xcor() and ycor() is in range of paddle's surface, change bearing by a specific degree.
-	- Step 9: Anti-voiding the paddles:
+	- Step 10: Anti-voiding the paddles:
 		+ If paddles' ycor() is more than 260, sety() back to 260.
 		+ If paddles' ycor() is less than -260, sety() back to -260.
