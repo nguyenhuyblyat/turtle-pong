@@ -43,9 +43,9 @@ Note: This program is released under GNU General Public License version 3, all f
 	+ Step 6.2: Create a turtle Object and draw seven-segments number (Explanation below)
 	+ Step 6.3: Display the scoreboard on top of the screen
 - Step 7: Make the ball move:
-        + Step 7.1: Create 2 variables DirectionX, DirectionY.
-        + Step 7.2: Add DirectionX with ball's xcor(), DirectionY with ball's ycor().
-        Explanation: Imagine the whole window is a graph, and the ball is at [0, 0]. Every time the loop runs, it will add a specific value to ball's x and y. Let's assume the Dx = 1 and Dy = 1. Every time the loop runs, the coordinates of the ball is constantly rising from [0, 0] to [1, 1] and [2, 2] and so on... The ball is corresponding with the gradient: y = x
+	+ Step 7.1: Create 2 variables DirectionX, DirectionY.
+	+ Step 7.2: Add DirectionX with ball's xcor(), DirectionY with ball's ycor().
+	+ Explanation: Imagine the whole window is a graph, and the ball is at [0, 0]. Every time the loop runs, it will add a specific value to ball's x and y. Let's assume the Dx = 1 and Dy = 1. Every time the loop runs, the coordinates of the ball is constantly rising from [0, 0] to [1, 1] and [2, 2] and so on... The ball is corresponding with the gradient: y = x
 - Step 8: Borders collisions:
 	+ Upper and lower borders will bounce the ball off
 		_ If ball's ycor() is larger than 300, sety() to 300 and change bearing by a specific degree
