@@ -61,7 +61,7 @@ Note: This program is released under GNU General Public License version 3, all f
 
 
 ## Seven-segment display Logic
-	| 	| a | b | c | d | e | f | g |
+	|   | a | b | c | d | e | f | g |
 	|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 	| 0 | x | x | x | x | x | x | o |
 	| 1 | o | x | x | o | o | o | o |
@@ -76,7 +76,10 @@ Note: This program is released under GNU General Public License version 3, all f
 	key: x = on, o = off
 	
 ## Seven Segments Display
-Each digit can be displayed by 7 "segments".\n
+- Each digit can be displayed by 7 "segments".
+
 ![Examples of seven-segments digits](https://github.com/nguyenhuyblyat/turtle-pong/blob/main/7seg1.gif?raw=true)
-\nWe can then apply this function that I stole from a chinese website i dont remember lol, with the additional help of the logic table.
+
+- We can then apply this function that I stole from a chinese website i dont remember lol, with the additional help of the logic table.
+
 ![lol](https://github.com/nguyenhuyblyat/turtle-pong/blob/main/seven-segment-example.jpg?raw=true)
