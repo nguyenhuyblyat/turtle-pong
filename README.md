@@ -18,7 +18,7 @@ Note: This program is released under GNU General Public License version 3, all f
 	- Quit: Y
 
 ## Magic Hax
-	- Step 1: Create an 800x600 window with Turtle, with a black background.
+	- Step 1: Create an fullscreen window with Turtle, with a black background and a border around the game.
 	- Step 2: Define a function to draw a dotted line:
 		+ In the function `drawDottedLine` in my code, it requires 4 arguments:
 			_ The turtle to draw the dotted line
@@ -40,11 +40,11 @@ Note: This program is released under GNU General Public License version 3, all f
 		+ Quiting the game
 	- Step 6: Create a scoring system:
 		+ Step 6.1: Initialize player 1's and player 2's score (0  -  0)
-		+ Step 6.2: Create a turtle Object and write the variables to it, using .format() function.
+		+ Step 6.2: Create a turtle Object and draw seven-segments number (Explanation below)
 		+ Step 6.3: Display the scoreboard on top of the screen
     - Step 7: Make the ball move:
-            + Step 7.1: Create 2 variables Dx, Dy.
-            + Step 7.2: Add Dx with ball's xcor(), Dy with ball's ycor().
+            + Step 7.1: Create 2 variables DirectionX, DirectionY.
+            + Step 7.2: Add DirectionX with ball's xcor(), DirectionY with ball's ycor().
             Explanation: Imagine the whole window is a graph, and the ball is at [0, 0]. Every time the loop runs, it will add a specific value to ball's x and y. Let's assume the Dx = 1 and Dy = 1. Every time the loop runs, the coordinates of the ball is constantly rising from [0, 0] to [1, 1] and [2, 2] and so on... The ball is corresponding with the gradient: y = x
 	- Step 8: Borders collisions:
 		+ Upper and lower borders will bounce the ball off
@@ -58,3 +58,24 @@ Note: This program is released under GNU General Public License version 3, all f
 	- Step 10: Anti-voiding the paddles:
 		+ If paddles' ycor() is more than 260, sety() back to 260.
 		+ If paddles' ycor() is less than -260, sety() back to -260.
+
+## Seven Segments Display
+	- Each digit can be displayed by 7 "segments".
+	![Examples of seven-segments digits](https://github.com/nguyenhuyblyat/turtle-pong/blob/main/7seg1.gif?raw=true)
+	- Based on that, we can work out the following table, which describes which segment to be illuminated to create the digit that we wanted:
+	| 	| a | b | c | d | e | f | g |
+	|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+	| 0 | x | x | x | x | x | x | o |
+	| 1 | o | x | x | o | o | o | o |
+	| 2 | x | x | o | x | x | o | x |
+	| 3 | x | x | x | x | o | o | x |
+	| 4 | o | x | x | o | o | x | x |
+	| 5 | x | o | x | x | o | x | x | 
+	| 6 | x | o | x | x | x | x | x |
+	| 7 | x | x | x | o | o | o | o |
+	| 8 | x | x | x | x | x | x | x |
+	| 9 | x | x | x | x | o | x | x |
+	key: x = on, o = off
+
+	- We can then apply this function that I stole from a chinese website i dont remember lol:
+	![lol](https://github.com/nguyenhuyblyat/turtle-pong/blob/main/seven-segment-example.jpg?raw=true)
