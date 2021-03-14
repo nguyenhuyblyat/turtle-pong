@@ -3,19 +3,19 @@ The famous "Pong!" game, recreated in Python 3.9.2 with built-in Turtle library.
 Note: This program is released under GNU General Public License version 3, all forks of this program are allowed as long as they are open-source. Full version of the license can be found in the repository under the name `LICENSE`.
 
 ## Prerequisites
-	- Python 3.x (https://python.org/)
-	- Turtle (built-in within Python)
-	- random (built-in within Python)
-	- time (built-in within Python)
+- Python 3.x (https://python.org/)
+- Turtle (built-in within Python)
+- random (built-in within Python)
+- time (built-in within Python)
 
 ## Running
-	- `python3 main.py`
-	- `python main.py` if the above doesn't work (edge cases)
+- `python3 main.py`
+- `python main.py` if the above doesn't work (edge cases)
 
 ## Controls
-	- Player 1 (left): A for up, Z for down
-	- Player 2 (right): K for up, M for down
-	- Quit: Y
+- Player 1 (left): A for up, Z for down
+- Player 2 (right): K for up, M for down
+- Quit: Y
 
 ## Magic Hax
 - Step 1: Create an fullscreen window with Turtle, with a black background and a border around the game.
