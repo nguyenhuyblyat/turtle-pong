@@ -63,7 +63,7 @@ Note: This program is released under GNU General Public License version 3, all f
 - Each digit can be displayed by 7 "segments".
 ![Examples of seven-segments digits](https://github.com/nguyenhuyblyat/turtle-pong/blob/main/7seg1.gif?raw=true)
 - Based on that, we can work out the following table, which describes which segment to be illuminated to create the digit that we wanted:
-| 	| a | b | c | d | e | f | g |
+|   | a | b | c | d | e | f | g |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 0 | x | x | x | x | x | x | o |
 | 1 | o | x | x | o | o | o | o |
