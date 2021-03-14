@@ -4,35 +4,40 @@ import turtle
 from random import *
 from time import *
 # importing libraries ^^^^^^
-winningPoint = 10
+winningPoint = 100
 paddleDistancePerClick = 80
 ballSpeed = 2.5
 # important variables xDDDDD ^^^^^^^^^^
 
-def drawGap(tur): # gap between each segment
+def moveGap(tur):
     tur.pu()
     tur.fd(2)
     tur.pd()
-def drawLine(draw, tur):  # Drawing single segment nixie tube
-    drawGap(tur)
+# gap between each segment ^^^^^^^^^^^
+
+def drawLine(draw, tur):
+    moveGap(tur)
     tur.pd() if draw else tur.pu()
     tur.fd(20)
-    drawGap(tur)
+    moveGap(tur)
     tur.rt(90)
+# function to draw a single segment ^^^^^^^^^^^^^^^
 
-def drawDigit(digit, tur):  # Drawing seven section digital tube according to the number
-    drawLine(True, tur) if digit in [2, 3, 4, 5, 6, 8, 9] else drawLine(False, tur)
-    drawLine(True, tur) if digit in [0, 1, 3, 4, 5, 6, 7, 8, 9] else drawLine(False, tur)
-    drawLine(True, tur) if digit in [0, 2, 3, 5, 6, 8, 9] else drawLine(False, tur)
-    drawLine(True, tur) if digit in [0, 2, 6, 8] else drawLine(False, tur)
-    # draw segment based on 
-    tur.left(90)
-    drawLine(True, tur) if digit in [0, 4, 5, 6, 8, 9] else drawLine(False, tur)
-    drawLine(True, tur) if digit in [0, 2, 3, 5, 6, 7, 8, 9] else drawLine(False, tur)
-    drawLine(True, tur) if digit in [0, 1, 2, 3, 4, 7, 8, 9] else drawLine(False, tur)
-    tur.left(180)
-    tur.pu()  # Position for drawing subsequent numbers
-    tur.fd(20)  # Position for drawing subsequent numbers
+def drawDigit(digits, tur):  # Drawing seven section digital tube according to the number
+    for digit in str(digits):
+        digit = int(digit)
+        drawLine(True, tur) if digit in [2, 3, 4, 5, 6, 8, 9] else drawLine(False, tur)
+        drawLine(True, tur) if digit in [0, 1, 3, 4, 5, 6, 7, 8, 9] else drawLine(False, tur)
+        drawLine(True, tur) if digit in [0, 2, 3, 5, 6, 8, 9] else drawLine(False, tur)
+        drawLine(True, tur) if digit in [0, 2, 6, 8] else drawLine(False, tur)
+        tur.left(90)
+        drawLine(True, tur) if digit in [0, 4, 5, 6, 8, 9] else drawLine(False, tur)
+        drawLine(True, tur) if digit in [0, 2, 3, 5, 6, 7, 8, 9] else drawLine(False, tur)
+        drawLine(True, tur) if digit in [0, 1, 2, 3, 4, 7, 8, 9] else drawLine(False, tur)
+        tur.left(180)
+        tur.pu()  # Position for drawing subsequent numbers
+        tur.fd(20)  # Position for drawing subsequent numbers
+# function to draw the digit in seven segment ^^^^^^^^^^
 
 def drawDottedLine(tur, sizeOfSide, spaceBetweenDots, numberOfDots):
     for i in range(numberOfDots):
@@ -173,8 +178,8 @@ while True:
         ballDirectionY = 0
         ball.setx(0)
         ball.sety(0)
-        scoreboard.clear()
-        scoreboard.write("Winner!", align="center", font=("", 24, "normal"))
+        scoreboard1.clear()
+        scoreboard1.write("Winner!", align="center", font=("", 24, "normal"))
         sleep(2.5)
         window.bye()
     elif playerB == winningPoint:
@@ -182,8 +187,8 @@ while True:
         ballDirectionY = 0
         ball.setx(0)
         ball.sety(0)
-        scoreboard.clear()
-        scoreboard.write("Winner!", align="center", font=("", 24, "normal"))
+        scoreboard2.clear()
+        scoreboard2.write("Winner!", align="center", font=("", 24, "normal"))
         sleep(2.5)
         window.bye()
     # Checks if either player has won, announce the winner, wait for 2.5 seconds and halt the program
